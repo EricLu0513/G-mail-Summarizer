@@ -3,3 +3,7 @@ node_modules/
 
 #忽略token.json(用戶需自行創立一個)
 token.json
+
+#忽略info中的檔案
+info/client_secret.json
+info/gpt.json
