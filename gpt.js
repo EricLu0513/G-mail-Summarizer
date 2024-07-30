@@ -22,7 +22,7 @@ const child = exec('node e-mail.js', (error, stdout, stderr) => {
 app.post('/ask-chatgpt', async (req, res) => {
     const { question } = req.body;
     console.log("question: ", question);//help user to check
-    const my_key = require('info/gpt.json');//get the individual key
+    const my_key = require('./info/gpt.json');//get the individual key
 
     try {
         const {Configuration, OpenAIApi} = require("openai");
@@ -30,16 +30,14 @@ app.post('/ask-chatgpt', async (req, res) => {
         apiKey: my_key.secret_key,
         basePath: "https://api.chatanywhere.cn"
         });
-        console.log('API Key:', configuration.apiKey);
-        console.log('Base Path:', configuration.basePath);
+        console.log('API Key:', configuration.apiKey);//check API.key whether correct
+        //console.log('Base Path:', configuration.basePath);
         const openai = new OpenAIApi(configuration)
         //console.log("openai: ", openai);
         const response = await openai.createChatCompletion({
         model: "gpt-4o-mini",
         messages: [{role: "user", content: question}],
-        });//"gpt-4o 好像達到上限了"
-        //console.log("hi");
-        //console.log(response.data.choices[0].message.content);
+        });
 
         console.log({ answer: response.data.choices[0].message.content})
         res.json({ answer: response.data.choices[0].message.content});
