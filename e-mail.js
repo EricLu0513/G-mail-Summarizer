@@ -67,6 +67,7 @@ const server = app.listen(port, () => {
       scope: scopes,
     });
     console.log('Authorize this app by visiting this url:', authorizationUrl);
+
   }
 });
 

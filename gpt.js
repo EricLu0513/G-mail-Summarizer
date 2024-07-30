@@ -1,24 +1,28 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
-const { exec } = require('child_process');
+const {spawn} = require('child_process');
 const app = express();
 const port = 3000;
 
 app.use(cors());
 app.use(express.json());
 
-const child = exec('node e-mail.js', (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Execution error: ${error}`);
-      return;
-    }
-    if (stderr) {
-      console.error(`standard error: ${stderr}`);
-    }
-    console.log(`standard output: ${stdout}`);
-  });
+const child = spawn('node', ['e-mail.js']);
 
+child.stdout.on('data', (data) => {
+  console.log(`${data}`);
+});
+
+// 捕獲標準錯誤
+child.stderr.on('data', (data) => {
+  console.error(`stderr: ${data}`);
+});
+
+// 捕獲子進程結束事件
+child.on('close', (code) => {
+  console.log(`child process exited with code ${code}`);
+});
 app.post('/ask-chatgpt', async (req, res) => {
     const { question } = req.body;
     console.log("question: ", question);//help user to check

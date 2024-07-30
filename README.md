@@ -35,21 +35,25 @@ npm install
 點擊以下連結，下載這個chrome_extension
 
 [下載網址]()
-## 使用教學
+## 第一次使用教學
+
+**STEP 1**
 
 啟動本地的終端機
 
-```bash
-node gpt.js
-```
+    ```bash
+    node gpt.js
+    ```
+**STEP 2**
 
-點擊chrome_extension (G-mail Summarizer)
+然後會在終端機看見一個連結，點擊此連結進行身分認證，然後就可以關閉終端機，重新執行上面的代碼一次。
 
-按下啟動(通常需要等1分鐘)
+**STEP 3**
 
-即可看見今日的G-mail大綱
+點擊 Chrome 擴展 (G-mail Summarizer)，按下啟動（通常需要等 1 分鐘），即可看見今日的 G-mail 大綱。按下取消（則可以關閉使用）。
 
-按下取消(則可以關閉使用)
+
+
 
 
 
