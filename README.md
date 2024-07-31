@@ -43,7 +43,9 @@ touch gpt.json
 
 **STEP 6**
 
-進入Google Cloud去申請使用API
+進入Google Cloud去申請使用API，並將json檔加入client_secret.json
+
+[教學資源](https://blog.uwinfo.com.tw/auth/article/bike/492)
 
 **STEP 7**
 
