@@ -52,7 +52,7 @@ touch gpt.json
 點擊以下連結，下載這個chrome_extension
 
 [下載網址]()
-## 第一次使用教學
+## 使用教學
 
 **STEP 1**
 
@@ -61,11 +61,12 @@ touch gpt.json
 ```bash
 node gpt.js
 ```
-**STEP 2**
+**STEP 1-1(第一次使用時須執行)**
+
 
 然後會在終端機看見一個連結，點擊此連結進行身分認證，獲得token.json，然後就可以關閉終端機，重新執行上面的代碼一次。
 
-**STEP 3**
+**STEP 2**
 
 點擊 Chrome 擴展 (G-mail Summarizer)，按下啟動（通常需要等 1 分鐘），即可看見今日的 G-mail 大綱。按下取消（則可以關閉使用）。
 
