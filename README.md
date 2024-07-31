@@ -24,17 +24,28 @@ sudo apt install nodejs npm
 ```bash
 npm install
 ```
+
 **STEP 4**
+
+創立資料夾(info/)，並在底下創立二個檔案，分別命名為 client_secret.json 與 gpt.json。
+
+```bash
+mkdir info
+touch client_secret.json
+touch gpt.json
+```
+
+**STEP 5**
 
 點擊以下連結，並將secret_key複製到gpt.json
 
 [申請secret_key連結](https://api.chatanywhere.org/v1/oauth/free/github/render) (需要綁定GitHub帳號)
 
-**STEP 5**
+**STEP 6**
 
 進入Google Cloud去申請使用API
 
-**STEP 6**
+**STEP 7**
 
 點擊以下連結，下載這個chrome_extension
 
